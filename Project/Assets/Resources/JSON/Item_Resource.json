@@ -1,0 +1,19 @@
+{
+  "Items": [
+    {
+      "key": 1,
+      "name": "약한 뼈",
+      "description": "나약한 개체의 뼈 소재"
+    },
+    {
+      "key": 2,
+      "name": "단단한 뼈",
+      "description": "보다 강한 개체의 뼈 소재"
+    },
+    {
+      "key": 3,
+      "name": "우두머리 뼈",
+      "description": "우두머리 개체의 뼈 소재"
+    }
+  ]
+}

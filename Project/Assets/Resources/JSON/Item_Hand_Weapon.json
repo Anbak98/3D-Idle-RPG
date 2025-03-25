@@ -1,0 +1,32 @@
+{
+  "Items": [
+    {
+      "key": 1,
+      "name": "Wooden Sword",
+      "description": "이 검은 영웅의 첫 번째 전설과 함께했다.",
+      "attackDamage": 3,
+      "abilityPower": 0
+    },
+    {
+      "key": 2,
+      "name": "InfectedSword",
+      "description": "30",
+      "attackDamage": 0,
+      "abilityPower": 3
+    },
+    {
+      "key": 3,
+      "name": "Doe",
+      "description": "22",
+      "attackDamage": 8,
+      "abilityPower": 2
+    },
+    {
+      "key": 170,
+      "name": "Le\u0027Geno",
+      "description": "이 검은 영웅의 마지막 전설과 함께할 것이다.",
+      "attackDamage": 99999,
+      "abilityPower": 99999
+    }
+  ]
+}

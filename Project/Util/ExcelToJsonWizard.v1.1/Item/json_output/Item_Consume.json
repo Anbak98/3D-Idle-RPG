@@ -1,0 +1,22 @@
+{
+  "Items": [
+    {
+      "key": 1,
+      "name": "빨강 포션",
+      "description": "HP를 10만큼 회복합니다.",
+      "effect": "v HP 10"
+    },
+    {
+      "key": 2,
+      "name": "파랑 포션",
+      "description": "MP를 10만큼 회복합니다.",
+      "effect": "v MP 10"
+    },
+    {
+      "key": 3,
+      "name": "암마",
+      "description": "우두머리 개체의 뼈 소재",
+      "effect": "b God 1"
+    }
+  ]
+}

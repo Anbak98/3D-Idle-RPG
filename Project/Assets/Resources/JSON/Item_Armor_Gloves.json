@@ -1,0 +1,18 @@
+{
+  "Items": [
+    {
+      "key": 1,
+      "name": "Wooden Gloves",
+      "description": "손등에 가시가 박힐 일은 없다.",
+      "armor": 2,
+      "magic_resistance": 0
+    },
+    {
+      "key": 2,
+      "name": "Jane",
+      "description": "30",
+      "armor": 3,
+      "magic_resistance": 1
+    }
+  ]
+}
