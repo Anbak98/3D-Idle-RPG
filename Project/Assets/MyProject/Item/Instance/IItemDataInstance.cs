@@ -1,4 +1,5 @@
 using Unity.VisualScripting;
+using UnityEngine;
 
 namespace Project.Data.Item
 {
@@ -9,11 +10,33 @@ namespace Project.Data.Item
 
     public interface IItemInstance
     {
+        public int SlotWidth { get; set; }
+        public int SlotHeight { get; set; }
+
+        public int ItemID { get; }
+
+        public Sprite GetSprite();
+        public Mesh GetMesh();
     }
 
     public abstract class ItemInstance<T> : IItemInstance where T : IItemData
     {
         public T Data { get; private set; }
+
+        public int SlotWidth { get; set; }
+
+        public int SlotHeight { get; set; }
+        public int ItemID => Data.Key;
+
+        public Sprite GetSprite()
+        {
+            return Resources.Load<Sprite>($"Sprites/{typeof(T).Name}_{ItemID}");
+        }
+
+        public Mesh GetMesh()
+        {
+            throw new System.NotImplementedException();
+        }
 
         protected ItemInstance(T data)
         {
@@ -53,7 +76,11 @@ namespace Project.Data.Item
 
     public class HandWeaponInstance : ItemInstance<Item_Hand_Weapon>
     {
-        public HandWeaponInstance(Item_Hand_Weapon data) : base(data) { }
+        public HandWeaponInstance(Item_Hand_Weapon data) : base(data) 
+        {
+            SlotWidth = 1;
+            SlotHeight = 2;
+        }
     }
 
     public class ResourceInstance : ItemInstance<Item_Resource>
