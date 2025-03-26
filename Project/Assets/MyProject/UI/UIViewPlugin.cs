@@ -1,7 +1,8 @@
+using UnityEngine;
+
 namespace Project.UI
 {
-    public class UIViewPlugin : UIView
+    public class UIViewPlugin : MonoBehaviour
     {
-        
     }
 }

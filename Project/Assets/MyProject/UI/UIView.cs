@@ -9,9 +9,6 @@ namespace Project.UI
         private static readonly int ShowAnimHash = Animator.StringToHash("Show");
         private static readonly int HideAnimHash = Animator.StringToHash("Hide");
 
-        [SerializeField]
-        private List<UIViewPlugin> _plugins;
-
         public void OwnThisView(UIController owner)
         {
             _ownerController = owner;
@@ -46,7 +43,7 @@ namespace Project.UI
         #region PROTECTED
         protected UIController _ownerController;
 
-        protected void Start()
+        protected virtual void Start()
         {
             TryGetComponent(out _animator);
         }
