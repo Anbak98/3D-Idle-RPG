@@ -9,6 +9,8 @@ public class ViewPluginItem : UIViewPlugin, IBeginDragHandler, IDragHandler, IEn
     [SerializeField] private int Width;
     [SerializeField] private int Height;
 
+    public Slot slot;
+
     private bool selected = false;
     private Vector3 curPosition;
 
@@ -41,6 +43,29 @@ public class ViewPluginItem : UIViewPlugin, IBeginDragHandler, IDragHandler, IEn
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = eventData.position;
+
+        // 현재 마우스 위치에서 Raycast 실행
+        PointerEventData pointerData = new PointerEventData(EventSystem.current)
+        {
+            position = eventData.position
+        };
+
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerData, results);
+
+        int x, y;
+        foreach (RaycastResult result in results)
+        {
+            // 자기 자신은 무시
+            if (result.gameObject == gameObject) continue;
+
+            if (result.gameObject.TryGetComponent(out ViewPluginItemSlot targetSlot))
+            {
+                x = targetSlot.x;
+                y = targetSlot.y;
+                return;
+            }
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)

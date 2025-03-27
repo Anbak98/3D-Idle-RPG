@@ -38,6 +38,7 @@ public class UIVIewInventory : UIView
             obj.transform.position += new Vector3(100 * slot.index.Item2, -100 * slot.index.Item1);
             obj.transform.rotation = Quaternion.Euler(0, 0, slot.DirToDegree());
             obj.GetComponent<Image>().sprite = slot.item.GetSprite();
+            obj.GetComponent<ViewPluginItem>().slot = slot;
 
             ViewPluginItemSlot viewPluginItemSlot = viewPluginItemSlots[slot.index.Item1 * 5 + slot.index.Item2];
             viewPluginItemSlot.Set(slot);
